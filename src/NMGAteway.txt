@@ -1,0 +1,63 @@
+// load user settings
+#include "config.h"
+// include supporting libraries
+#ifdef MY_GATEWAY_ESP8266
+  #include <ESP8266WiFi.h>
+  #include <WiFiUdp.h>
+#endif
+// load MySensors library
+#include <MySensors.h>
+// load NodeManager library
+#include "NodeManager.h"
+
+// create a NodeManager instance
+NodeManager nodeManager;
+
+// before
+void before() {
+	// setup the serial port baud rate
+	Serial.begin(MY_BAUD_RATE);  
+	/*
+	 * Register below your sensors
+	*/
+	
+	nodeManager.registerSensor(SENSOR_LDR,A0);
+	nodeManager.registerSensor(SENSOR_BME280);
+	
+	/*
+	 * Register above your sensors
+	*/
+	nodeManager.before();
+  }
+  
+  // presentation
+  void presentation() {
+	// call NodeManager presentation routine
+	nodeManager.presentation();
+  }
+  
+  // setup
+  void setup() {
+	// call NodeManager setup routine
+	nodeManager.setup();
+  }
+  
+  // loop
+  void loop() {
+	// call NodeManager loop routine
+	nodeManager.loop();
+  
+  }
+  
+  // receive
+  void receive(const MyMessage &message) {
+	// call NodeManager receive routine
+	nodeManager.receive(message);
+  }
+  
+  // receiveTime
+  void receiveTime(unsigned long ts) {
+	// call NodeManager receiveTime routine
+	nodeManager.receiveTime(ts);
+  }
+  
