@@ -74,19 +74,19 @@
 #define MY_GATEWAY_ESP8266
 
 // Set this node's subscribe and publish topic prefix
-#define MY_MQTT_PUBLISH_TOPIC_PREFIX "mygateway2-out"
-#define MY_MQTT_SUBSCRIBE_TOPIC_PREFIX "mygateway2-in"
+#define MY_MQTT_PUBLISH_TOPIC_PREFIX "gw2-out"
+#define MY_MQTT_SUBSCRIBE_TOPIC_PREFIX "gw2-in"
 
 // Set MQTT client id
-#define MY_MQTT_CLIENT_ID "mysensors-3"
+#define MY_MQTT_CLIENT_ID "halle-gw"
 
 // Enable these if your MQTT broker requires usenrame/password
-//#define MY_MQTT_USER "username"
-//#define MY_MQTT_PASSWORD "password"
+#define MY_MQTT_USER "enny"
+#define MY_MQTT_PASSWORD "enny-2911"
 
 // Set WIFI SSID and password
-#define MY_ESP8266_SSID "WLAN2"
-#define MY_ESP8266_PASSWORD "altes-rumpel-2"
+#define MY_ESP8266_SSID "strube@home"
+#define MY_ESP8266_PASSWORD "#wom6at-053-pa$!"
 
 // Set the hostname for the WiFi Client. This is the hostname
 // it will pass to the DHCP server if not static.
@@ -101,7 +101,7 @@
 
 
 // MQTT broker ip address.
-#define MY_CONTROLLER_IP_ADDRESS 195, 147, 158, 250
+#define MY_CONTROLLER_IP_ADDRESS 192, 168, 178, 250
 // #define MY_CONTROLLER_IP_ADDRESS 77, 22, 32, 139
 
 // The MQTT broker port to to open
@@ -188,7 +188,7 @@ void before()
 void presentation()
 {
 	// Present locally attached sensors here
-	sendSketchInfo("MqttGW_Relais","1.0");
+	sendSketchInfo("Halle MqttGW","1.0");
 	//present(CHILD_ID_RELAIS,S_BINARY);
 }
 
